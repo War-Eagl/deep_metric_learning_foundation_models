@@ -5,6 +5,7 @@ from sampler import OmniglotSampler
 from config import Config
 from data import OmniglotData
 from model import OmniglotModel
+import pytorch_metric_learning
 from pytorch_metric_learning.utils.accuracy_calculator import AccuracyCalculator
 import umap
 from cycler import cycler
