@@ -1,6 +1,6 @@
 import torch
 import pytorch_metric_learning.losses as losses
-from .config import Config
+from config import Config
 
 class OmniglotLoss:
     def __init__(self):

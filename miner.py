@@ -1,6 +1,6 @@
 import torch
 import pytorch_metric_learning.miners as miners
-from .config import Config
+from config import Config
 
 class OmniglotMiner:
     def __init__(self):

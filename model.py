@@ -1,7 +1,7 @@
 import torch
 import timm
 import torch.nn as nn
-from .config import Config
+from config import Config
 
 class OmniglotModel():
     def __init__(self, model_name):

@@ -2,7 +2,7 @@ import torch
 import torchvision
 from torch.utils.data import random_split
 from torchvision import transforms
-from .config import Config
+from config import Config
 
 class OmniglotData:
     def __init__(self):

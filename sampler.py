@@ -1,6 +1,6 @@
 import torch
 import pytorch_metric_learning.samplers as samplers
-from .config import Config
+from config import Config
 
 class OmniglotSampler:
     def __init__(self, labels):
