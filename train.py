@@ -9,7 +9,7 @@ from pytorch_metric_learning.utils.accuracy_calculator import AccuracyCalculator
 import umap
 from cycler import cycler
 import pytorch_metric_learning.utils.logging_presets as logging_presets
-from pytorch_metric_learning import testers, trainers
+from pytorch_metric_learning import testers, trainers, miners, losses
 import numpy as np
 import os
 import wandb
@@ -45,8 +45,8 @@ for model_name in model_names:
     trunk.to(device)
     embedder.to(device)
 
-    loss_fn = OmniglotLoss().compute_loss
-    miner = OmniglotMiner().mine
+    loss_fn = losses.AngularLoss()
+    miner = miners.TripletMarginMiner(margin=0.2)
 
     trunk_optimizer = torch.optim.Adam(trunk.parameters(), lr=Config.LEARNING_RATE['trunk'], weight_decay=0.0001)
     embedder_optimizer = torch.optim.Adam(embedder.parameters(), lr=Config.LEARNING_RATE['embedder'], weight_decay=0.0001)
