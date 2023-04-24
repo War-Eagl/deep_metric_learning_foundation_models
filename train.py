@@ -33,7 +33,7 @@ for model_name in model_names:
 
     experiment_name = model_name + '_' + Config.LOSS
     experiment_path = './experiments/' + experiment_name + '/' 
-    os.mkdir(experiment_path)
+    os.makedirs(experiment_path)
 
     embedding_size = Config.EMBEDDING_SIZE 	
     device = Config.DEVICE
