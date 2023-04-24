@@ -11,7 +11,7 @@ class OmniglotModel():
         self.margin = Config.MARGIN
         self.trunk = timm.create_model(self.model_name, pretrained=True, in_chans=1, num_classes=0)
         self.embedder = nn.Sequential(
-            nn.Linear(in_features=self.trunk.num_features, out_features=self.embedding_size),
+            nn.Linear(in_features=self.trunk.num_features, out_features=256),
             nn.ReLU(),
-            nn.Linear(in_features=self.embedding_size, out_features=self.num_classes)
+            nn.Linear(in_features=256, out_features=self.embedding_size)
         )
